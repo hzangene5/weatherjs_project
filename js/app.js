@@ -1,5 +1,5 @@
-const weather = new Weather('تهران', 'تهران');
-
+const weather = new Weather('شیراز', 'فارس');
+const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', getWeather);
 
 function getWeather(){
     weather.getWeather()
-                  .then( result => console.log(result))
+                  .then( result => {
+                    console.log(result);
+                    ui.paint(result, weather.location);
+                  }
+                        
+                  )
                   .catch(err =>console.log(err.message));
 }
 

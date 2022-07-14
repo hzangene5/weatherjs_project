@@ -22,6 +22,13 @@ class Weather {
         this.state = state
     }
 
+
+    get location(){
+        return this.state +  ' , ' + this.city;
+    }
+
+    
+
 }
 
 
